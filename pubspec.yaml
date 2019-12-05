@@ -1,8 +1,8 @@
 name: flutter_c14n
-description: A new flutter plugin project.
+description: XML canonicalization for Flutter.
 version: 0.0.1
-author:
-homepage:
+author: Integrator Dubrovnik
+homepage: https://www.integrator.hr
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

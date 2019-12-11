@@ -36,7 +36,7 @@ class FlutterC14n {
   static Future<String> canonicalize(
     String xml,
     C14nType c14nType,
-    List<String> inclusiveNamespacePrefixList,
+    String inclusiveNamespacePrefixList,
     String xPathQuery,
   ) async {
     Map<String, dynamic> args = {

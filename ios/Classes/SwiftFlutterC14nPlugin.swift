@@ -32,7 +32,7 @@ public class SwiftFlutterC14nPlugin: NSObject, FlutterPlugin {
         case "canonicalize":
             let xml : String = dic["xml"] as! String
             let c14nType = C14nType.init(rawValue: dic["c14nType"] as! integer_t)!
-            let inclusiveNamespacePrefixList : [String: String]? = dic["inclusiveNamespacePrefixList"] as? [String: String]
+            let inclusiveNamespacePrefixList : String? = dic["inclusiveNamespacePrefixList"] as? String
             let xPathQuery : String? = dic["xPathQuery"] as? String
             self.canonicalize(xml:xml,c14nType: c14nType, inclusiveNamespacePrefixList: inclusiveNamespacePrefixList, xPathQuery: xPathQuery, result: result)
         default:
@@ -41,7 +41,7 @@ public class SwiftFlutterC14nPlugin: NSObject, FlutterPlugin {
         }
     }
        
-    private func canonicalize(xml: String, c14nType: C14nType, inclusiveNamespacePrefixList : [String: String]?, xPathQuery :String?,  result : FlutterResult) {
+    private func canonicalize(xml: String, c14nType: C14nType, inclusiveNamespacePrefixList : String?, xPathQuery :String?,  result : FlutterResult) {
         let cChars = xml.cString(using: String.Encoding.utf8)
         let buffer = UnsafeBufferPointer(start: UnsafePointer(cChars), count: cChars!.count)
         let options = Int32(XML_PARSE_DTDATTR.rawValue | XML_PARSE_NOENT.rawValue)
